@@ -19,19 +19,19 @@ public class YouTubeStepDefinitions {
     public void logInToYoutube() {
         youTubePage = new YouTubePage();
         youTubePage.logIn();
-        logger.info("Check loading Google page");
+        //logger.info("Check loading Google page");
     }
 
     @When("Fill out word {string}")
     public void fillOutWordXpath(String word) {
         youTubePage.searchInYouTube(word);
-        log.info("Searching on YouTube");
+        //log.info("Searching on YouTube");
     }
 
     @And("Click on Search button")
     public void clickOnSearch() {
         youTubePage.clickOnSearch();
-        log.info("Click Enter on keyboard");
+        //log.info("Click Enter on keyboard");
         ExecuteSQL.executeInsertSQl();
     }
 
