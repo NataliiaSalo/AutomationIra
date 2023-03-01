@@ -1,6 +1,7 @@
 package page_objects;
 
 import core.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,13 @@ import javax.lang.model.element.Element;
 import java.awt.*;
 
 public class YouTubePage {
-    private WebDriver driver = Driver.getDriver();;
+    Logger logger;
+
+    //PropertyConfigurator.
+    //BasicConfigurator.configure();
+    //logger.info("This is my first log4j's statement");
+    private WebDriver driver = Driver.getDriver();
+    ;
     //private Element searchType = driver.findElement(//h3[contains(text(),'YouTube')])[1]");
 
     @FindBy(xpath = "//input[@id='search']")
@@ -34,6 +41,7 @@ public class YouTubePage {
     public void searchInYouTube(String word) {
         searchInputField.click();
         searchInputField.sendKeys(word);
+        logger.info("Search" + word);
     }
 
     public void clickOnSearch() {
